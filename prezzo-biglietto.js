@@ -14,11 +14,11 @@ INIZIO
 2. Chiedo all'utente la sua età
 3. SE (l'età dell'utente è minore di 18 anni )
    ALLORA
-         3.a prezzo del biglietto è pari ad --> (n°Km percorsi) * 0.21 * 20 / 100
+         3.a prezzo del biglietto è pari ad --> (n°Km percorsi) * 0.21  - (n°Km percorsi) * 0.21  * 20 / 100
    ALTRIMENTI
             SE (l'età dell'utente è maggiore di 65)
             ALLORA
-                     3.b prezzo del biglietto è pari ad --> (n°Km percorsi) * 0.21 * 40 / 100
+                     3.b prezzo del biglietto è pari ad --> (n°Km percorsi) * 0.21  - (n°Km percorsi) * 0.21 * 40 / 100
             ALTRIMENTI
                      3.c prezzo del biglietto è pari ad -->  (n°Km percorsi) * 0.21
 FINE
