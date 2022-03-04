@@ -39,7 +39,7 @@ const etaUtente = parseInt(prompt('Inserisci la tua età: ')); //per memorizzare
 const costoBiglietto = numeroChilometri * 0.21;
 const scontoMinorenni = costoBiglietto * 20 / 100;
 const scontoOver = costoBiglietto * 40 / 100;
-if((typeof etaUtente != number) || (typeof numeroChilometri != number))
+if((typeof(etaUtente) != 'number') || (typeof(numeroChilometri) != 'number'))
 {
     alert('Errore!!! Inserire nuovamente i dati');
 }
