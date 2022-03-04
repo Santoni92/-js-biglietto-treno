@@ -24,23 +24,51 @@ INIZIO
 FINE
 */ 
 
-console.log('JS OK');
 
-document.getElementById('nota').innerText = 'Programma che calcola il costo del biglietto del treno';
+
+
+
+console.log('JS OK');   //controllo per vedere se lo script è linkato bene nell'html
 
 const numeroChilometri =parseFloat(prompt('Inserisci numero dei chilometri percorsi: ')); //per memorizzare il n° dei km
+
+/*nota che prompt() restituisce sempre una stringa ecco perchè ho utilizzato la funzione parseFloat() così da convertire la stringa 
+  in un numero decimale;stesso discorso per parseInt() solo che converte in intero*/
+
 const etaUtente = parseInt(prompt('Inserisci la tua età: ')); //per memorizzare l'età dell'utente
 const costoBiglietto = numeroChilometri * 0.21;
 const scontoMinorenni = costoBiglietto * 20 / 100;
 const scontoOver = costoBiglietto * 40 / 100;
+if((typeof etaUtente != number) || (typeof numeroChilometri != number))
+{
+    alert('Errore!!! Inserire nuovamente i dati');
+}
+else
+{
+
+     if( etaUtente < 18)
+    {
+        const costoBigliettoScontato = costoBiglietto - scontoMinorenni;
+        alert('Il prezzo del tuo biglietto è di: ' + costoBigliettoScontato.toFixed(2));    //toFixed(n° cifre decimali) restituisce il numero a cui è applicato avente una quantità di cifre decimali pari al suo argomento
+    }else if(etaUtente > 65)
+    {
+        const costoBigliettoScontato = costoBiglietto - scontoOver;
+         alert('Il prezzo del tuo biglietto è di: ' + costoBigliettoScontato.toFixed(2));
+    }
+    else{
+        alert('Il prezzo del tuo biglietto è di: ' + costoBiglietto.toFixed(2));
+        }
+}
+
+/*
 if( etaUtente < 18)
 {
     const costoBigliettoScontato = costoBiglietto - scontoMinorenni;
-    alert('Il prezzo del tuo biglietto è di: ' + costoBigliettoScontato.toFixed(2));
+    alert('Il prezzo del tuo biglietto è di: ' + costoBigliettoScontato.toFixed(2));    //toFixed(n° cifre decimali) restituisce il numero a cui è applicato avente una quantità di cifre decimali pari al suo argomento
 }else if(etaUtente > 65){
     const costoBigliettoScontato = costoBiglietto - scontoOver;
     alert('Il prezzo del tuo biglietto è di: ' + costoBigliettoScontato.toFixed(2));
 }
 else{
     alert('Il prezzo del tuo biglietto è di: ' + costoBiglietto.toFixed(2));
-}
+}*/
